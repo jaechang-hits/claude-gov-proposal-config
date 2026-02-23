@@ -6,25 +6,44 @@
 
 ```
 .
-├── CLAUDE.md                        # Claude 메인 컨텍스트 및 지시사항
+├── CLAUDE.md                             # Claude 메인 컨텍스트 및 지시사항
 └── .claude/
-    ├── settings.local.json          # Claude 권한 설정
-    └── agents/
-        └── proposal-writer.md      # 정부과제 제안서 작성 서브에이전트 정의
+    ├── settings.local.json               # Claude 권한 설정
+    ├── agents/
+    │   ├── proposal-writer.md            # 정부과제 제안서 작성 서브에이전트
+    │   ├── pptx-creator.md              # PowerPoint 생성/편집 서브에이전트
+    │   └── researcher.md                # 웹+학술 DB 조사 서브에이전트
+    └── skills/
+        ├── pptx/                         # PPT 생성/편집 스킬
+        │   ├── SKILL.md
+        │   ├── editing.md               # 기존 PPT 편집 워크플로우
+        │   ├── pptxgenjs.md             # PptxGenJS 기반 생성 가이드
+        │   └── scripts/                 # unpack/pack/validate 스크립트
+        └── frontend-design/
+            └── SKILL.md                 # 프론트엔드 디자인 원칙
 ```
 
 ## 사용 방법
 
-이 레포의 파일들을 프로젝트 루트 디렉토리에 복사한 후 Claude Code를 실행하면 됩니다.
+이 레포를 클론한 후, 파일들을 프로젝트 루트 디렉토리에 복사하면 됩니다.
 
 ```bash
-cp CLAUDE.md /your-project/
-cp -r .claude/ /your-project/
+git clone https://github.com/jaechang-hits/claude-gov-proposal-config.git
+cp claude-gov-proposal-config/CLAUDE.md /your-project/
+cp -r claude-gov-proposal-config/.claude/ /your-project/
 ```
 
-## 주요 기능
+## 서브에이전트
 
-- **proposal-writer 에이전트**: 정부 R&D 과제 제안서 섹션 작성 전문 서브에이전트
-  - 과학기술정보통신부, 산업통상자원부, 중소벤처기업부 등 주요 부처 제안서 형식 지원
-  - 그림/다이어그램 삽입 가이드 포함
-  - 정량적 목표 및 근거 중심 서술
+| 에이전트 | 역할 |
+|----------|------|
+| `proposal-writer` | 정부 R&D 과제 제안서 섹션 작성 전문. 과기부·산업부·중기부 등 주요 부처 형식 지원 |
+| `pptx-creator` | PowerPoint 파일 생성 및 편집 전문. PptxGenJS 또는 unpack/edit/pack 워크플로우 |
+| `researcher` | 웹 및 학술 DB 조사 전문. 기술 트렌드·시장 규모·정책 자료 리서치 |
+
+## 스킬
+
+| 스킬 | 역할 |
+|------|------|
+| `pptx` | PPT 생성/편집 방법론 (PptxGenJS, python-pptx, unpack/pack 스크립트 포함) |
+| `frontend-design` | 프로덕션 수준 프론트엔드 디자인 원칙 |
