@@ -2,15 +2,19 @@
   "permissions": {
     "allow": [
       "Bash(python3:*)",
-      "WebSearch",
-      "WebFetch(domain:hai.stanford.edu)",
-      "WebFetch(domain:www.voronoiapp.com)",
+      "Bash(node:*)",
+      "Bash(npx:*)",
+      "Bash(npm:*)",
+      "Bash(pdftoppm:*)",
+      "Bash(pip:*)",
       "Bash(ls:*)",
       "Bash(head:*)",
-      "WebFetch(domain:raw.githubusercontent.com)",
-      "WebFetch(domain:www.nature.com)",
-      "WebFetch(domain:ircai.org)",
-      "WebFetch(domain:royalsociety.org)"
+      "Bash(cd:*)",
+      "WebSearch",
+      "WebFetch",
+      "Bash(tail:*)",
+      "Bash(gh api:*)",
+      "Bash(echo:*)"
     ]
   }
 }
