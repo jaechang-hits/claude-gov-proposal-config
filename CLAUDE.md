@@ -6,6 +6,11 @@
  - 조사가 필요하면 리서치 에이전트에 위임해
  - PPT 제작이 필요하면 PPTX 에이전트에 위임해
 
+## Python 실행 환경
+ - Python은 반드시 `pixi run python`으로 실행한다. `python` 또는 `python3` 직접 호출 금지.
+ - 예: `pixi run python script.py` / `pixi run python -c "..."`
+ - pip 설치 필요 시에도 `pixi run pip install ...` 대신 pixi.toml의 dependencies에 추가할 것을 권장
+
 ## 주요 참고 파일
 
 | 파일 | 설명 |

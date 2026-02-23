@@ -44,6 +44,11 @@ skills:
 ## QA (필수)
 → `pptx` 스킬의 QA 섹션 참고. 최소 1회 생성 → 이미지 변환 → 시각 검사 → 수정 사이클 필수
 
+## Python 실행
+- Python 스크립트는 반드시 `pixi run python`으로 실행한다
+- 예: `pixi run python .claude/skills/pptx/scripts/thumbnail.py`
+- `python` 또는 `python3` 직접 호출 금지
+
 ## 주의사항
 - PptxGenJS hex 색상에 `#` 절대 금지
 - `bullet: true` 단독 사용 금지

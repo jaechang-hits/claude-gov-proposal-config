@@ -1,0 +1,27 @@
+[workspace]
+name = "ai-global-lab"
+version = "0.1.0"
+description = "AI 글로벌 거점 연구소 정부과제 작업 환경"
+channels = ["conda-forge"]
+platforms = ["osx-arm64", "osx-64"]
+
+[dependencies]
+python = ">=3.11"
+nodejs = ">=20"
+# PPT 텍스트 추출
+markitdown = "*"
+# 이미지 처리 (thumbnail)
+pillow = "*"
+# PDF → 이미지 변환
+poppler = "*"
+
+
+[tasks]
+# PptxGenJS 전역 설치
+setup-npm = "npm install -g pptxgenjs"
+# 전체 셋업
+setup = { depends-on = ["setup-npm"] }
+
+# PPT → PDF → 이미지 변환 (QA용)
+qa = "python .claude/skills/pptx/scripts/office/soffice.py --headless --convert-to pdf"
+thumbnail = "python .claude/skills/pptx/scripts/thumbnail.py"

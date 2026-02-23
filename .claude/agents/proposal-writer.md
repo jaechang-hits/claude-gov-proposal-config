@@ -74,6 +74,10 @@ tools: Read, Write, Edit, Glob, Grep, Bash, WebSearch, WebFetch
 - 대안 표현: (메인 에이전트가 선택할 수 있는 다른 서술 방식)
 ```
 
+## Python 실행
+- Python 스크립트 실행 시 반드시 `pixi run python`을 사용한다
+- `python` 또는 `python3` 직접 호출 금지
+
 ## 주의사항
 - 허위 수치나 근거 없는 주장은 작성하지 않는다. 구체적 데이터가 없으면 "[DATA 필요: 구체적 수치]" 형태로 표시한다.
 - 타 기관/기업을 직접적으로 비하하는 표현은 사용하지 않는다.

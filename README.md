@@ -31,7 +31,25 @@
 git clone https://github.com/jaechang-hits/claude-gov-proposal-config.git
 cp claude-gov-proposal-config/CLAUDE.md /your-project/
 cp -r claude-gov-proposal-config/.claude/ /your-project/
+cp claude-gov-proposal-config/pixi.toml /your-project/
 ```
+
+### 환경 셋업 (pixi)
+
+Python/Node 환경은 [pixi](https://pixi.sh)로 관리합니다.
+
+```bash
+# pixi 설치 (최초 1회)
+curl -fsSL https://pixi.sh/install.sh | bash
+
+# 의존성 설치
+pixi install
+
+# NPM 패키지 셋업 (PptxGenJS 등)
+pixi run setup
+```
+
+> **Python 실행 규칙**: 모든 Python 스크립트는 `pixi run python`으로 실행합니다. (`python` 직접 호출 금지)
 
 ## 서브에이전트
 
